@@ -1,0 +1,49 @@
+<html>
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+    th {
+        text-align: center;     
+    }
+
+  </style>
+</head>
+<body>
+<br><br>
+<div class="container">
+  <div class="panel panel-primary rounded-0">
+    <div class="panel-heading rounded-0">
+      <h6 class="panel-title">My Marks</h6>
+    </div>
+    <table class="table table-hover table-bordered" id="dev-table">
+      <thead>
+        <tr>
+
+          <th>Course</th>
+          <th>Total Questions</th>
+          <th>Total Marks</th>
+          <th>Obtained Marks</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>{{course_id}}</td>
+        <td>{{data}}</td>
+        <td>{{data1}}</td>
+        <td>{{count}}</td>       
+      </tr>
+    </table>
+  </div>
+</div>
+<br><br><br><br><br><br>
+</body>
+</html>

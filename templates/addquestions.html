@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Course Registration</title>
+	
+<style>
+	body {
+    background-image: url('https://img.freepik.com/premium-photo/color-background-template-art-stylized-design-your-creative-ideas-with-space-text_7954-6567.jpg');
+    background-size: cover;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    color: rgb(0, 0, 0);
+    
+    background-color:whitesmoke;
+    border-radius: 10px;
+    box-shadow: white;
+    margin: 100px;
+    padding: 20px;
+    width: 400px;
+    margin-left: 500px;
+}
+
+h1 {
+    color: #020202;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+button {
+    background-color: red;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+		
+</head>
+<body>
+	<div class="container">
+		<h1>Add Questions</h1>
+		<form action="" method="post">
+            <label >Question id</label>
+			<input type="text"  name="id" placeholder=" Enter Question id" required>
+			<label >Question Name</label>
+			<input type="text"  name="name" placeholder=" Enter Question Name" required>
+
+			<label >Course Id</label>
+            <select class="fname" name="one">
+                {% for i in data %}
+                <option >{{i[0]}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label >Option-1</label>
+			<input type="text"  name="option1" placeholder="Option" required>
+            <label >Option-2</label>
+			<input type="text"  name="option2" placeholder="Option" required>
+			<label >Option-3</label>
+			<input type="text"  name="option3" placeholder="Option" required>
+            <label >Option-4</label>
+			<input type="text"  name="option4" placeholder="Option" required>
+            <label >Correct Option</label>
+			<input type="text"  name="coption" placeholder="Option" required>
+            <label >Marks</label>
+			<input type="text"  name="marks" placeholder="Option" required>
+			<button type="submit">Submit</button>
+            <a href ="{{url_for('addquestions')}}"></a>
+		</form>
+	</div>
+</body>
+</html>

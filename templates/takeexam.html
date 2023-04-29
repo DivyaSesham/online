@@ -1,0 +1,48 @@
+{% extends 'studentbase.html' %}
+{% block content %}
+<html>
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+    .jumbotron{
+        margin-top: 5%;
+        height: fit-content;
+        width:fit-content;
+        margin-left: 20%;
+    }
+    .container my-4{
+        width: fit-content;
+        height: fit-content;
+    }
+  </style>
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="card border-primary mx-4 my-4">
+                <div class="card-body text-default">
+                    <h4 class="card-title">Rules :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>All questions are MCQ (multiple choice question)</li>
+                            <li><span class="text-danger">Only one choice is correct among the given.</span></li>
+                            <li>Every question carry Different marks.</li>
+                            <li>No Negative Marking</li>
+                            <li>Only One attempt is allowed</li>
+                            <li>Try to answer ASAP.</li>
+                            <li>You will be able to view marks immediately once after you submit the Answers.</li>
+                        </ul>
+                    <p></p>
+                    <a href="{{url_for('startexam',course_name=course_name)}}" class="btn btn-primary btn-lg" style="border-radius:0px;">Enter Examination</a>
+                </div>  
+                <div class="card-footer">Best Of Luck, Students!</div>  
+            </div>  
+        </div>  
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <style>
+         table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        body{
+            background-image: url('https://img.freepik.com/free-photo/violet-watercolor-texture-background_1083-172.jpg?1');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .btnstyle {
+            background-color:red;
+            color:black;
+            padding:10px;
+            border-radius: 20px;
+            border:none;
+            font-size: 25px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+     <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <a href="{{url_for('adminques')}}"><button style="float:right" class="btnstyle">Back</button></a>
+    <center><h1 style="color:black;">All Questions</h1></center>
+    <div style="margin-left:0%; margin-top:2%;">
+   <div>
+        <a href="{{url_for('addquestions')}}"><button class="btnstyle">Questions</button></a>
+   </div>
+   <table cellpadding="10px">
+    <br>
+    <tr>
+        <td><h2>Question Id</h2></td>
+        <td><h2>Question name</h2></td>
+        <td><h2>Course Id</h2></td>
+        <td><h2>Option-1</h2></td>
+        <td><h2>Option-2</h2></td>
+        <td><h2>Option-3</h2></td>
+        <td><h2>Option-4</h2></td>
+        <td><h2>Correct Option</h2></td>
+        <td><h2>Marks</h2></td>
+    
+    </tr>
+    
+    {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td>{{i[3]}}</td>
+            <td>{{i[4]}}</td>
+            <td>{{i[5]}}</td>
+            <td>{{i[6]}}</td>
+            <td>{{i[7]}}</td>
+            <td>{{i[8]}}</td>
+
+
+            <td><a href="{{url_for('update',q_id=i[0])}}">update</a></td>
+            
+
+        </tr>
+    {% endfor %}
+       
+   </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>admin reg</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='adminreg.css')}}">
+
+		
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+	<div class="container">
+		<h1>SIGN UP</h1>
+		<form action="" method="post">
+			<label>Username</label>
+			<input type="text" id="username" name="username" placeholder=" username" required>
+			<label >Email</label>
+			<input type="text"  name="email" placeholder="email" required>
+            <label >Password</label>
+			<input type="text"  name="password" placeholder="Password" required>
+            
+
+
+			<button type="submit">Login</button>
+		</form>
+	</div>
+</body>
+</html>

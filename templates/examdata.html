@@ -1,0 +1,47 @@
+{% extends 'studentbase.html' %}
+{% block content %}
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+        .course{
+            padding: 5%;
+            margin-left:250px;
+            width: 80%;
+            height: 10%;
+        }
+        select, input{
+            box-sizing: border-box;
+            width:198px;
+        }
+    </style>
+</head>
+<body>
+    <div class="course">
+        <h2 style="text-align:center; padding-top: 2%;">Please Enter Course-Id</h2>
+        <form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;" >
+            <div class="form-group">
+                <label for="question">Course Name</label>
+                <!--input class="form-control form-control-sm rounded-0" /-->                
+                <select class="form-control" name="course-name" style="height: fit-content;">                    
+                    {% for i in data %}
+                    <option value="{{i[0]}}">{{i[0]}}</option>
+                    {%  endfor %} 
+                  </select>
+                <br>
+                
+                
+            </div>
+            <button type="submit" class="btn btn-success text-center" style="border-radius:0px;" href="{{url_for('studentexam',coursename=coursename)}}">Submit</button>
+        </form>
+    </div>
+<br><br><br>
+{% endblock content %}
+</body>
+</html>
+

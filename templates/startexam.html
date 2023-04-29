@@ -1,0 +1,105 @@
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        var mins=10;
+        var secs=mins*60;
+        function countdown() {
+            setTimeout('Decrement()',60);
+        }
+        function Decrement() {
+            if(document.getElementById) {
+                minutes=document.getElementById("minutes");
+                seconds=document.getElementById("seconds");
+                if(seconds<59) {
+                    seconds.value=secs;
+                }
+                else {
+                    minutes.value=getminutes();
+                    seconds.value=getseconds();
+                }
+                if(mins<1) {
+                    minutes.style.color="red";
+                    seconds.style.color="red";
+                }
+                if(mins<0) {
+                    alert('time up please submit the answer ');
+                    minutes.value=0;
+                    seconds.value=0;
+                    setTimeout('Decrement()',1000);
+                    secs=5;
+                }
+                else {
+                    secs--;
+                    setTimeout('Decrement()',1000);
+                }
+            }
+        }
+    
+        function getminutes() {
+            mins=Math.floor(secs/60);
+            return mins;
+        }
+    
+        function getseconds() {
+            return secs-Math.round(mins*60);
+        }
+    </script>
+
+
+</head>
+<body onload="countdown();">
+
+
+<div class="jumbotron ml-1">
+    <form class="form" autocomplete="off"  action="#" method="POST">
+        <h2 style="text-align: center; margin-top: 20px;">Course:{{course_id}}</h2>
+        <div style="display: flex; width:100%;
+            justify-content:end; margin-right: 3%;">
+                <b>Time Left</b>
+            </div>
+            <div style="display: flex; width:100%;
+                justify-content:end; margin-right: 3%;">
+                <input id="minutes" type="text" style="width: 2%; border: none; font-size: 16px;
+                font-weight: bold; color: black;">
+                <font size="5">
+                    :
+                </font>
+                <input id="seconds" type="text" style="width: 2%; border: none; font-size: 16px;
+                font-weight: bold; color: black;">
+            </div>
+        {% for i in data %}
+        <div class="d-flex w-100 align-items-center">
+            <div class="col-auto flex-shrink-1 flex-grow-1">
+                <h3 class="">{{i[0]}}:{{i[1]}}</h3>
+            </div>
+            <div class="col-auto">
+                <h4 style="text-align: right;">[{{i[8]}} Mark]</h4>
+            </div>
+        </div>
+        <div class="form-check mx-4 d-flex align-items-center">
+            <select class="form-control" id="exampleFormControlSelect1" name="options">
+                <option value="{{i[3]}}">{{i[3]}}</option>
+                <option value="{{i[4]}}">{{i[4]}}</option>
+                <option value="{{i[5]}}">{{i[5]}}</option>
+                <option value="{{i[6]}}">{{i[6]}}</option>
+              </select>
+            </div>
+            
+        {% endfor %}
+        <br>
+        <input class="btn btn-primary btn-lg" style="border-radius: 0%;" type="submit" value="Submit Answers">
+
+    </form>
+</div>
+
+
+
+<br><br><br><br><br><br>
+</body>
+</html> 
