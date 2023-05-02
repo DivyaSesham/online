@@ -2,63 +2,60 @@
 <html>
 <head>
 	<title>user reg</title>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		body {
-			background-image: url('https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg');
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
+	body {
+		background-image: url('https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+		font-family: Arial, sans-serif;
+		background-size: cover;
+		font-size: large;
+		margin-top: 3.5%;
 		}
-		
-		.container {
-			color: #1d1c1c;
-			border: #fff;
-			
-			background-color: rgb(186, 212, 225);
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(211, 204, 204, 0.2);
-			margin: 100px;
-			padding: 20px;
-			width: 400px;
-			margin-left: 500px;
-		}
-		
-		h1 {
-			color: #070707;
-			font-size: 24px;
-			margin-bottom: 20px;
-			text-align: center;
-		}
-		
-		input[type=text], input[type=password] {
-			border-radius: 5px;
-			border: 1px solid #ccc;
-			box-sizing: border-box;
-			font-size: 16px;
-			margin-bottom: 20px;
-			padding: 12px 20px;
-			width: 100%;
-		}
-		
-		button {
-			background-color:rgb(255, 0, 25);
-			border-radius: 5px;
-			border: none;
-			color: #fff;
-			cursor: pointer;
-			font-size: 16px;
-			margin-bottom: 10px;
-			padding: 12px 20px;
-			width: 100%;
-		}
-		
-		button:hover {
-			background-color: #45a049;
-		}
-		
+	.container {
+		color: rgb(5, 5, 109);
+		border: 4px solid white;
+		background-color: silver;
+		border-radius: 50px;
+		box-shadow: 3 5 10px rgba(241, 237, 237, 0.2);
+		margin: 10px;
+		padding: 10px;
+		width: 400px;
+		margin-left: 750px;
+	}
+	h1 {
+		color: black;
+	    font-size: large;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	
+	input[type=text], input[type=password] {
+		border-radius: 5px;
+		border: 2px solid #e9c43e;
+		box-sizing: border-box;
+		font-size: 16px;
+		margin-bottom: 20px;
+		padding: 12px 20px;
+		width: 100%;
+	}
+	
+	button {
+		background-color:bisque;
+		border-radius: 5px;
+		border: 1px solid red;
+		color:black;
+		cursor: pointer;
+		font-size: 16px;
+		margin-bottom: 10px;
+		padding: 12px 20px;
+		width: 100%;
+	}
+	
+	button:hover {
+		background-color: gold;
+	}
 	</style>
+
+		
 </head>
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -71,10 +68,10 @@
 	
 	<div class="container">
 		
-		<h1>SIGN UP</h1>
+		<h1><b>SIGN UP</b></h1>
 		<form method="post" action=""  >
 			<span class="border border-white"></span>
-			<label for="username">Username</label><br>
+			<label for="username">Username</label>
 			<input type="text" id="username" name="username" placeholder=" Username" required>
 
 			<label for="password">Password</label>
@@ -90,7 +87,7 @@
 			<a href="{{url_for('userlogin')}}">Already have an account</a><br><br>
 
 			
-			<button type="submit">Submit</button>
+			<button type="submit"><b>Submit</b></button>
 		</form>
 	</div>
 </body>
